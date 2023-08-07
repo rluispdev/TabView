@@ -7,11 +7,28 @@
 
 import SwiftUI
 
+enum Tab: String {
+    
+    case house
+    case message
+    case person
+    case eraser
+    case trash
+    
+}
+
 struct MyTabBar: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+           
+            
+            }
+        }
     }
-}
+
+
+
 
 struct MyTabBar_Previews: PreviewProvider {
     static var previews: some View {
