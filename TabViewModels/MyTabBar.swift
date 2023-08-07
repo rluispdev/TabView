@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Tab: String {
+enum Tab: String, CaseIterable{
     
     case house
     case message
@@ -18,10 +18,19 @@ enum Tab: String {
 }
 
 struct MyTabBar: View {
+    
+    @Binding var selectedTab : Tab
+    private var fillImage: String {
+        selectedTab.rawValue + ".fill"
+    }
+    
+    
     var body: some View {
         
         VStack {
-           
+            ForEach(Tab.allCases, id: \.rawValue) { tab in
+                Image(systemName: selectedTab == tab ? fillImage: tab.rawValue)
+            }
             
             }
         }
@@ -32,6 +41,6 @@ struct MyTabBar: View {
 
 struct MyTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        MyTabBar()
+        MyTabBar(selectedTab: .constant(.house))
     }
 }
