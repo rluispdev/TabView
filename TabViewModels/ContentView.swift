@@ -19,14 +19,17 @@ struct ContentView: View {
         ZStack{
             VStack {
                 TabView(selection: $selectedTab) {
-                    ForEach(Tab.allCases, id: \.rawValue) { tab in
-                        HStack {
-                            Image(systemName: tab.rawValue)
-                            Text("\(tab.rawValue.capitalized)")
-                                .bold()
-                        }
-                        .tag(tab)
-                    }
+                    
+                    FirstScreen()
+                        .tag(Tab.house)
+                    SecondScreen()
+                        .tag(Tab.message)
+                    ThirdScreen()
+                        .tag(Tab.person)
+                    FourthScreen()
+                        .tag(Tab.eraser)
+                    FifthScreen()
+                        .tag(Tab.trash)
                 }
             }
             VStack{
