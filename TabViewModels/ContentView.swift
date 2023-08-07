@@ -10,11 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var selectedTab: Tab = .house
     
-    
     var body: some View {
-        
-            Text("MyTabBar")
-         
+        MyTabBar(selectedTab: $selectedTab)
     }
 }
 

@@ -32,7 +32,17 @@ struct MyTabBar: View {
                 
                 Spacer()
                 ForEach(Tab.allCases, id: \.rawValue) { tab in
+                    
                     Image(systemName: selectedTab == tab ? fillImage: tab.rawValue)
+                    
+                        .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
+                        .foregroundColor(selectedTab == tab ? .green: .black)
+                        .font(.system(size: 22))
+                        .onTapGesture {
+                            withAnimation(.easeIn(duration: 0.10)){
+                                selectedTab = tab
+                            }
+                        }
                     Spacer()
                 }
             }
