@@ -28,9 +28,17 @@ struct MyTabBar: View {
     var body: some View {
         
         VStack {
-            ForEach(Tab.allCases, id: \.rawValue) { tab in
-                Image(systemName: selectedTab == tab ? fillImage: tab.rawValue)
+            HStack {
+                
+                Spacer()
+                ForEach(Tab.allCases, id: \.rawValue) { tab in
+                    Image(systemName: selectedTab == tab ? fillImage: tab.rawValue)
+                    Spacer()
+                }
             }
+            .frame(height: 60)
+            .background(.thinMaterial)
+            .cornerRadius(10)
             
             }
         }
