@@ -12,7 +12,7 @@ struct ThirdScreen: View {
         
         ZStack {
             ScrollView {
-                Text("Screen 3 🤓")
+                Text("Screen 3 😎")
                     .frame(height: 700)
                     .bold()
                 .font(.largeTitle)
