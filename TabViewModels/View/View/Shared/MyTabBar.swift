@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-enum Tab: String, CaseIterable{
-    
-    case house
-    case message
-    case person
-    case eraser
-    case trash
-    
-}
 
 struct MyTabBar: View {
     
@@ -23,11 +14,7 @@ struct MyTabBar: View {
     private var fillImage: String {
         selectedTab.rawValue + ".fill"
     }
-    
-    
-    
-    
-    var body: some View {
+        var body: some View {
         
         VStack {
             HStack {
@@ -38,7 +25,7 @@ struct MyTabBar: View {
                     Image(systemName: selectedTab == tab ? fillImage: tab.rawValue)
                     
                         .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
-                        .foregroundColor(selectedTab == tab ? .green: .black)
+                        .foregroundColor(selectedTab == tab ? .black: .black)
                         .font(.system(size: 22))
                         .onTapGesture {
                             withAnimation(.easeIn(duration: 0.10)){
@@ -49,15 +36,11 @@ struct MyTabBar: View {
                 }
             }
             .frame(height: 60)
-            .background(.thinMaterial)
             .cornerRadius(10)
             
             }
         }
     }
-
-
-
 
 struct MyTabBar_Previews: PreviewProvider {
     static var previews: some View {
